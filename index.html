@@ -203,6 +203,49 @@
       display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; justify-content: space-between;
     }
 
+
+    .gig {
+      display: grid; gap: 1.25rem;
+    }
+    @media (min-width: 860px) {
+      .gig { grid-template-columns: 1.05fr 0.95fr; align-items: start; }
+    }
+    .gig-card {
+      background: var(--bg-card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 1.35rem 1.4rem;
+    }
+    .gig-card .when {
+      font-family: "Space Grotesk", Inter, sans-serif;
+      font-size: 1.15rem; font-weight: 600; margin-bottom: 0.35rem;
+    }
+    .gig-card .venue {
+      font-size: 1.02rem; font-weight: 550; margin-bottom: 0.25rem;
+    }
+    .gig-dl {
+      display: grid; gap: 0.55rem; margin: 1rem 0 1.15rem;
+      color: var(--muted); font-size: 0.92rem;
+    }
+    .gig-dl div { display: grid; grid-template-columns: 5.5rem 1fr; gap: 0.5rem; }
+    .gig-dl dt { color: var(--muted); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; padding-top: 0.15rem; }
+    .gig-dl dd { color: var(--text); margin: 0; }
+    .gig-dl a { color: var(--accent); }
+    .gig-dl a:hover { text-decoration: underline; }
+    .gig-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin-top: 0.25rem; }
+    .fb-embed-wrap {
+      background: var(--bg-card); border: 1px solid var(--line);
+      border-radius: var(--radius); overflow: hidden;
+      min-height: 320px;
+    }
+    .fb-embed-wrap .fb-tools {
+      padding: 0.75rem 1rem; border-bottom: 1px solid var(--line);
+      display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;
+      justify-content: space-between;
+    }
+    .fb-embed-wrap .fb-frame {
+      width: 100%; min-height: 420px; border: 0; display: block; background: #fff;
+    }
+    .fb-like-slot { min-height: 28px; display: flex; align-items: center; }
+
     [data-lang="en"] .lang-pl { display: none !important; }
     [data-lang="pl"] .lang-en { display: none !important; }
   </style>
@@ -213,6 +256,7 @@
     PHONE=
     IG_MANAGER=
     IG_JANN=
+    FB_EVENT=   (none public as of 2026-11-09; join → /bezogrodekodra/events)
   -->
   <script>
     window.JANN_CONFIG = {
@@ -234,6 +278,7 @@
     <header class="site">
       <a class="logo" href="#top">JANN</a>
       <div class="nav-links">
+        <a href="#gig"><span class="lang-pl">Występ</span><span class="lang-en">Gig</span></a>
         <a href="#sets"><span class="lang-pl">Sety</span><span class="lang-en">Sets</span></a>
         <a href="#listen"><span class="lang-pl">Słuchaj</span><span class="lang-en">Listen</span></a>
         <a href="#contact"><span class="lang-pl">Współpraca</span><span class="lang-en">Booking</span></a>
@@ -260,6 +305,99 @@
         </div>
         <div class="hero-photo">
           <img src="assets/hero.jpg" alt="JANN behind the decks" width="1280" height="720" />
+        </div>
+      </section>
+
+
+      <section id="gig">
+        <h2 class="section-title">
+          <span class="lang-pl">Najbliższy występ</span>
+          <span class="lang-en">Next gig</span>
+        </h2>
+        <p class="section-lead lang-pl">Środa 18.11.2026 · Bez Ogródek · Szczecin. Godzina i wstęp — wkrótce.</p>
+        <p class="section-lead lang-en">Wednesday 18.11.2026 · Bez Ogródek · Szczecin. Time and entry — TBA.</p>
+
+        <div class="gig">
+          <div class="gig-card">
+            <div class="when">
+              <span class="lang-pl">środa, 18 listopada 2026</span>
+              <span class="lang-en">Wednesday, 18 November 2026</span>
+            </div>
+            <div class="venue">JANN · live</div>
+            <dl class="gig-dl">
+              <div>
+                <dt><span class="lang-pl">Miejsce</span><span class="lang-en">Venue</span></dt>
+                <dd>Bez Ogródek</dd>
+              </div>
+              <div>
+                <dt><span class="lang-pl">Adres</span><span class="lang-en">Address</span></dt>
+                <dd>
+                  <a href="https://www.google.com/maps/search/?api=1&amp;query=ul.+Jana+z+Kolna+7%2C+Szczecin"
+                     target="_blank" rel="noopener noreferrer">ul. Jana z Kolna 7, Szczecin</a>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="lang-pl">Godzina</span><span class="lang-en">Time</span></dt>
+                <dd>
+                  <span class="lang-pl">godzina wkrótce</span>
+                  <span class="lang-en">time TBA</span>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="lang-pl">Wstęp</span><span class="lang-en">Entry</span></dt>
+                <dd>
+                  <span class="lang-pl">informacja wkrótce</span>
+                  <span class="lang-en">details TBA</span>
+                </dd>
+              </div>
+              <div>
+                <dt><span class="lang-pl">Lokal</span><span class="lang-en">Venue tel.</span></dt>
+                <dd><a href="tel:+48730513829">+48 730 513 829</a></dd>
+              </div>
+            </dl>
+            <div class="gig-actions">
+              <a class="btn primary"
+                 href="https://www.facebook.com/bezogrodekodra/events"
+                 target="_blank" rel="noopener noreferrer">
+                <span class="lang-pl">Dołącz na Facebooku</span>
+                <span class="lang-en">Join on Facebook</span>
+              </a>
+              <a class="btn"
+                 href="https://www.google.com/maps/search/?api=1&amp;query=ul.+Jana+z+Kolna+7%2C+Szczecin"
+                 target="_blank" rel="noopener noreferrer">
+                Google Maps
+              </a>
+            </div>
+          </div>
+
+          <div class="fb-embed-wrap">
+            <div class="fb-tools">
+              <div class="fb-like-slot">
+                <!-- Like venue page (no public event URL found) -->
+                <iframe
+                  title="Facebook Like — Bez Ogródek"
+                  src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fbezogrodekodra%2F&amp;width=140&amp;layout=button_count&amp;action=like&amp;size=small&amp;share=false&amp;height=21&amp;appId"
+                  width="140" height="21" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                  allow="encrypted-media" loading="lazy"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen="true"></iframe>
+              </div>
+              <span style="color:var(--muted);font-size:0.78rem">
+                <span class="lang-pl">Polub lokal · zobacz wydarzenia</span>
+                <span class="lang-en">Like the venue · see events</span>
+              </span>
+            </div>
+            <iframe
+              class="fb-frame"
+              title="Facebook — Bez Ogródek events"
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fbezogrodekodra%2F&amp;tabs=events&amp;width=500&amp;height=420&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=true"
+              width="500" height="420"
+              style="border:none;overflow:hidden;width:100%;max-width:100%"
+              scrolling="no" frameborder="0" allowfullscreen="true"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
         </div>
       </section>
 
